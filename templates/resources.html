@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <div class="jumbotron text-center">
+        <h1 class="display-4">Resource Center</h1>
+        <p class="lead">Here you can find a comprehensive library of tools, best practices, and case studies to support your journey towards sustainability.</p>
+    </div>
+
+    <div class="container">
+        <div class="card-deck mb-4">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Resource 1</h5>
+                    <p class="card-text">This is a tool to help you calculate your carbon footprint.</p>
+                    <a href="{{ url_for('carbon_footprint') }}" class="btn btn-primary resource-btn">Access Resource</a>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Resource 2</h5>
+                    <p class="card-text">This is a case study on how a small business successfully reduced their emissions.</p>
+                    <a href="{{ url_for('case_study') }}" class="btn btn-primary resource-btn">Access Resource</a>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Resource 3</h5>
+                    <p class="card-text">This is a guide on best practices for energy efficiency in the office.</p>
+                    <a href="{{ url_for('energy_efficiency') }}" class="btn btn-primary resource-btn">Access Resource</a>
+                </div>
+            </div>
+        </div>
+
+        <h2 class="mt-4">Eco-Friendly Service Providers</h2>
+        <p class="mb-4">Here you can find a list of service providers that can help your business reduce its carbon footprint.</p>
+
+        <!-- Add your service providers here -->
+    </div>
+
+    <script>
+        // Add a simple animation effect when the "Access Resource" button is clicked
+        $(document).ready(function(){
+            $(".resource-btn").click(function(event){
+                event.preventDefault();
+                $(this).text("Accessing...").fadeOut(1000, function() {
+                    $(this).text("Accessed!").fadeIn(1000);
+                });
+            });
+        });
+    </script>
+{% endblock %}

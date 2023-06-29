@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <div class="jumbotron text-center">
+        <h1 class="display-4">About Us</h1>
+        <p class="lead">We are a web-based platform that aims to help SMEs reduce their carbon footprint. We provide information about various green certifications and connect businesses with eco-friendly service providers.</p>
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4">
+                <h2>Our Mission</h2>
+                <p>Our mission is to simplify the journey to net-zero emissions for SMEs by providing them with the resources and support they need to make sustainable changes to their business practices.</p>
+            </div>
+
+            <div class="col-md-4">
+                <h2>Our Vision</h2>
+                <p>We envision a future where all businesses, regardless of their size, are able to operate in a way that is environmentally sustainable and contributes to the fight against climate change.</p>
+            </div>
+
+            <div class="col-md-4">
+                <h2>Our Team</h2>
+                <p>We are a team of passionate individuals who believe in the power of small businesses to make a big impact on the environment. We come from diverse backgrounds and bring a wide range of expertise to our work.</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Smooth scrolling
+        $(document).ready(function(){
+            $("a").on('click', function(event) {
+                if (this.hash !== "") {
+                    event.preventDefault();
+                    var hash = this.hash;
+                    $('html, body').animate({
+                        scrollTop: $(hash).offset().top
+                    }, 800, function(){
+                        window.location.hash = hash;
+                    });
+                }
+            });
+        });
+    </script>
+{% endblock %}

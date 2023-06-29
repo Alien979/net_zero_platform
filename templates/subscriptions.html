@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <div class="jumbotron text-center">
+        <h1 class="display-4">Premium Subscriptions</h1>
+        <p class="lead">Access advanced features and personalized support through our subscription plans.</p>
+    </div>
+
+    <div class="container">
+        <div class="card-deck mb-4">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Basic Plan</h5>
+                    <p class="card-text">Access to all basic features.</p>
+                    <a href="#" class="btn btn-primary subscribe-btn">Subscribe</a>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Premium Plan</h5>
+                    <p class="card-text">Access to all features and personalized support.</p>
+                    <a href="#" class="btn btn-primary subscribe-btn">Subscribe</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Add a simple animation effect when the "Subscribe" button is clicked
+        $(document).ready(function(){
+            $(".subscribe-btn").click(function(event){
+                event.preventDefault();
+                $(this).text("Subscribing...").fadeOut(1000, function() {
+                    $(this).text("Subscribed!").fadeIn(1000);
+                });
+            });
+        });
+    </script>
+{% endblock %}

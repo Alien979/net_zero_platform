@@ -1,0 +1,62 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1 class="mt-4">Step-by-Step Certification Guides</h1>
+    <p class="mb-4">Here you can find industry-specific guidance to help you on your journey towards net-zero emissions.</p>
+
+    <div class="accordion" id="guidesAccordion">
+        <div class="card">
+            <div class="card-header" id="headingOne">
+                <h5 class="mb-0">
+                    <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                        Guide 1
+                    </button>
+                </h5>
+            </div>
+            <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#guidesAccordion">
+                <div class="card-body">
+                    This is a step-by-step guide for the manufacturing industry. It covers everything from energy efficiency to waste management.
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-header" id="headingTwo">
+                <h5 class="mb-0">
+                    <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                        Guide 2
+                    </button>
+                </h5>
+            </div>
+            <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#guidesAccordion">
+                <div class="card-body">
+                    This guide is for the retail industry. It includes tips on sustainable sourcing, reducing packaging, and more.
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-header" id="headingThree">
+                <h5 class="mb-0">
+                    <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                        Guide 3
+                    </button>
+                </h5>
+            </div>
+            <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#guidesAccordion">
+                <div class="card-body">
+                    This guide is for the service industry. It provides information on how to reduce your carbon footprint in an office setting.
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Add a simple animation effect when the guide title is clicked
+        $(document).ready(function(){
+            $(".btn-link").click(function(){
+                $(this).text("Loading...").fadeOut(500, function() {
+                    $(this).fadeIn(500);
+                });
+            });
+        });
+    </script>
+{% endblock %}

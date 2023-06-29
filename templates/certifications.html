@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1 class="mt-4">Green Certifications</h1>
+    <p class="mb-4">Here you can find information about various green certifications that your business can obtain to demonstrate its commitment to sustainability.</p>
+
+    <h2 class="mt-4">Certification Progress Tracker</h2>
+    <p class="mb-4">Monitor your progress, track milestones, and stay motivated on your journey towards sustainability.</p>
+
+    <div class="progress mb-4">
+        <div id="progress-bar1" class="progress-bar bg-success" role="progressbar" style="width: 30%;" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100">Certification 1: 30%</div>
+    </div>
+
+    <div class="progress mb-4">
+        <div id="progress-bar2" class="progress-bar bg-info" role="progressbar" style="width: 50%;" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">Certification 2: 50%</div>
+    </div>
+
+    <div class="progress mb-4">
+        <div id="progress-bar3" class="progress-bar bg-warning" role="progressbar" style="width: 70%;" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100">Certification 3: 70%</div>
+    </div>
+
+    <script>
+        $(document).ready(function() {
+            var progressBars = [$('#progress-bar1'), $('#progress-bar2'), $('#progress-bar3')];
+            var widths = [30, 50, 70]; // Initial widths
+            var intervals = [null, null, null];
+
+            for (var i = 0; i < progressBars.length; i++) {
+                (function(i) {
+                    intervals[i] = setInterval(function() {
+                        widths[i] += 10;
+                        progressBars[i].css('width', widths[i] + '%');
+                        progressBars[i].attr('aria-valuenow', widths[i]);
+                        progressBars[i].text('Certification ' + (i + 1) + ': ' + widths[i] + '%');
+                        if (widths[i] >= 100) {
+                            clearInterval(intervals[i]);
+                        }
+                    }, 1000);
+                })(i);
+            }
+        });
+    </script>
+{% endblock %}
